@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    container_name: python-web
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    ports:
+    - "5000:5000"
+    #environment:
+    #  - PORT=${MY_PORT}
+  redis:
+    image: "redis:alpine"
+    container_name: john-redis
